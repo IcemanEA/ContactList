@@ -100,6 +100,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DOE-Hv-wOU"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="6R6-q7-IiW" id="jdY-LO-iHk"/>
+                        <outlet property="phoneLabel" destination="cgv-fy-pEa" id="4Hf-mj-iuB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ9-xe-sJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,12 +172,13 @@
             </objects>
             <point key="canvasLocation" x="471" y="384"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="fwa-5W-mM3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JIS-KT-p7w" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JIS-KT-p7w" customClass="TabBarViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gW0-nX-7ri">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

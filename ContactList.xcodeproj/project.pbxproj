@@ -17,6 +17,7 @@
 		4897C0B828873219009CC35D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897C0B728873219009CC35D /* Person.swift */; };
 		4897C0BA2887330A009CC35D /* PersonSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897C0B92887330A009CC35D /* PersonSectionsViewController.swift */; };
 		4897C0BC288735F6009CC35D /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897C0BB288735F6009CC35D /* PersonViewController.swift */; };
+		48DAEFFC288737DA00C9251D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAEFFB288737DA00C9251D /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4897C0B728873219009CC35D /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		4897C0B92887330A009CC35D /* PersonSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSectionsViewController.swift; sourceTree = "<group>"; };
 		4897C0BB288735F6009CC35D /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		48DAEFFB288737DA00C9251D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				4897C0B3288731C8009CC35D /* PersonListViewController.swift */,
 				4897C0B92887330A009CC35D /* PersonSectionsViewController.swift */,
 				4897C0BB288735F6009CC35D /* PersonViewController.swift */,
+				48DAEFFB288737DA00C9251D /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DAEFFC288737DA00C9251D /* TabBarViewController.swift in Sources */,
 				4897C0B828873219009CC35D /* Person.swift in Sources */,
 				4897C0B4288731C8009CC35D /* PersonListViewController.swift in Sources */,
 				4897C0B6288731D8009CC35D /* DataStore.swift in Sources */,
