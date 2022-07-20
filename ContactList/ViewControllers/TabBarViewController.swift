@@ -8,17 +8,19 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        var persons: [Person]?
-        
+    
+    let persons = Person.getDataFromStore()
+    
+    override func viewDidLoad() {
         viewControllers?.forEach { viewController in
             guard let navigationVC = viewController as? UINavigationController else { return }
-
-            if let personVC = navigationVC.topViewController as? PersonListViewController {
-                persons = personVC.persons
+            
+            if let personListVC = navigationVC.topViewController as? PersonListViewController {
+                personListVC.persons = persons
             }
-            if let personVC = navigationVC.topViewController as? PersonSectionsViewController {
-                personVC.persons = persons
+            
+            if let personSectionVC = navigationVC.topViewController as? PersonSectionsViewController {
+                personSectionVC.persons = persons
             }
         }
     }

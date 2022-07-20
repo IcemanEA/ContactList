@@ -15,15 +15,11 @@ struct Person {
         "\(firstName) \(lastName)"
     }
     
-    init(lastName: String) {
-        self.lastName = lastName
-    }
-    
-    static func getDataFromStore() -> [Person]? {
+    static func getDataFromStore() -> [Person] {
         let dataStore = DataStore()
         var persons: [Person] = []
         
-        for name in dataStore.secondNames.shuffled() {
+        for name in dataStore.lastNames.shuffled() {
             persons.append(Person(lastName: name))
         }
         
@@ -34,13 +30,13 @@ struct Person {
         }
         
         for (phone, (personIndex, _)) in
-                zip(dataStore.phones.shuffled(), persons.enumerated())
+            zip(dataStore.phones.shuffled(), persons.enumerated())
         {
             persons[personIndex].phone = phone
         }
     
         for (email, (personIndex, _)) in
-            zip(dataStore.firstNames.shuffled(), persons.enumerated())
+            zip(dataStore.emails.shuffled(), persons.enumerated())
         {
             persons[personIndex].email = email
         }
