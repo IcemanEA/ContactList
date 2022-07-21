@@ -6,10 +6,10 @@
 //
 
 struct Person {
-    var lastName: String
-    var firstName = ""
-    var email = ""
-    var phone = ""
+    let firstName: String
+    let lastName: String
+    let email: String
+    let phone: String
     
     var name: String {
         "\(firstName) \(lastName)"
@@ -19,28 +19,19 @@ struct Person {
         let dataStore = DataStore()
         var persons: [Person] = []
         
-        for name in dataStore.lastNames.shuffled() {
-            persons.append(Person(lastName: name))
-        }
+        let firstNamesFromDS = dataStore.firstNames.shuffled()
+        let lastNamesFromDS = dataStore.lastNames.shuffled()
+        let phonesFromDS = dataStore.phones.shuffled()
+        let emailFromDS = dataStore.emails.shuffled()
         
-        for (firstName, (personIndex, _)) in
-            zip(dataStore.firstNames.shuffled(), persons.enumerated())
-        {
-            persons[personIndex].firstName = firstName
+        for index in 0..<firstNamesFromDS.count {
+            let person = Person(firstName: firstNamesFromDS[index],
+                                lastName: lastNamesFromDS[index],
+                                email: emailFromDS[index],
+                                phone: phonesFromDS[index])
+            persons.append(person)
         }
-        
-        for (phone, (personIndex, _)) in
-            zip(dataStore.phones.shuffled(), persons.enumerated())
-        {
-            persons[personIndex].phone = phone
-        }
-    
-        for (email, (personIndex, _)) in
-            zip(dataStore.emails.shuffled(), persons.enumerated())
-        {
-            persons[personIndex].email = email
-        }
-        
+
         return persons
     }
 }

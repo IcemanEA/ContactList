@@ -10,16 +10,18 @@ import UIKit
 class TabBarViewController: UITabBarController {
     
     let persons = Person.getDataFromStore()
-    
+
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.visibleViewController?.title = "Person List"
+        
         viewControllers?.forEach { viewController in
-            guard let navigationVC = viewController as? UINavigationController else { return }
-            
-            if let personListVC = navigationVC.topViewController as? PersonListViewController {
+//            guard let navigationVC = viewController as? UINavigationController else { return }
+                        
+            if let personListVC = viewController as? PersonListViewController {
                 personListVC.persons = persons
-            }
-            
-            if let personSectionVC = navigationVC.topViewController as? PersonSectionsViewController {
+            } else if let personSectionVC = viewController as? PersonSectionsViewController {
                 personSectionVC.persons = persons
             }
         }

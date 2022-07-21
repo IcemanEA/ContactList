@@ -82,37 +82,39 @@ class DataStore {
             "Кальмаров"
         ]
         
-        phones = DataStore.generatePhones(count: lastNames.count)
-        emails = DataStore.generateEmails(count: lastNames.count)
+        phones = RandomGenerator.generatePhones(count: lastNames.count)
+        emails = RandomGenerator.generateEmails(count: lastNames.count)
     }
-    
-    static private func generatePhones(count: Int) -> [String] {
-        var randomPhones: [String] = []
-        for _ in 0..<count {
-            var stringNumber = "+7"
-            for _ in 0..<9 {
-                stringNumber += Int.random(in: 0...9).formatted()
-            }
-            randomPhones.append(stringNumber)
-        }
-        
-        return randomPhones
-    }
-    
-    static private func generateEmails(count: Int) -> [String] {
-        var randomEmails = [String]()
+}
 
-        let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-        for _ in 0..<count {
-            var email = ""
-            for _ in 0..<Int.random(in: 6...12) {
-                email += letters.randomElement() ?? ""
-            }
-            email += "@pochta.ru"
-            randomEmails.append(email)
-        }
-        
-        return randomEmails
+struct RandomGenerator {
+    static func generatePhones(count: Int) -> [String] {
+       var randomPhones: [String] = []
+       for _ in 0..<count {
+           var stringNumber = "+7"
+           for _ in 0..<9 {
+               stringNumber += Int.random(in: 0...9).formatted()
+           }
+           randomPhones.append(stringNumber)
+       }
+       
+       return randomPhones
     }
+   
+    static func generateEmails(count: Int) -> [String] {
+       var randomEmails = [String]()
+
+       let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+       for _ in 0..<count {
+           var email = ""
+           for _ in 0..<Int.random(in: 6...12) {
+               email += letters.randomElement() ?? ""
+           }
+           email += "@pochta.ru"
+           randomEmails.append(email)
+       }
+       
+       return randomEmails
+   }
 }

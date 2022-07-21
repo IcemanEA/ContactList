@@ -7,13 +7,13 @@
 
 import UIKit
 
-class PersonListViewController: UITableViewController {
+class PersonListViewController: UITableViewController, UINavigationControllerDelegate {
 
     var persons: [Person]!
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
+        persons.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
